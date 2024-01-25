@@ -1,5 +1,6 @@
-import { Box, Center, Stack, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { RegistrationForm } from "./components/RegistrationForm";
+import { BackgroundBox } from "../components/BackgroundBox";
 
 /**
  * 登録画面
@@ -8,18 +9,9 @@ import { RegistrationForm } from "./components/RegistrationForm";
  */
 export function Registration() {
   return (
-    <Center mt={5}>
-      <Stack
-        bg={"gray.100"}
-        boxShadow={"md"}
-        rounded={"base"}
-        width={["95%", "80%", "40%"]}
-        p={10}
-        gap={10}
-      >
-        <Text fontSize="4xl">ぶんぽーますたー</Text>
-        <RegistrationForm />
-      </Stack>
-    </Center>
+    <BackgroundBox>
+      <Text fontSize="4xl">ぶんぽーますたー</Text>
+      <RegistrationForm />
+    </BackgroundBox>
   );
 }
