@@ -15,4 +15,9 @@ export interface IAnswer {
    * テキスト
    */
   text: string;
+
+  /**
+   * 正答かどうか
+   */
+  isCorrect?: boolean;
 }
