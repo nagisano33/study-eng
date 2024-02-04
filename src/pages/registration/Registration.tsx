@@ -10,7 +10,7 @@ import { BackgroundBox } from "../components/BackgroundBox";
 export function Registration() {
   return (
     <BackgroundBox>
-      <Text fontSize="4xl">ぶんぽーますたー</Text>
+      <Text fontSize="4xl">新規登録</Text>
       <RegistrationForm />
     </BackgroundBox>
   );
