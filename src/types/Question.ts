@@ -1,11 +1,15 @@
 import { IAnswer } from "./IAnswer";
-import { ISentence } from "./ISentence";
 import { QuestionType } from "./QuestionType";
 
 /**
  * 問題
  */
-export interface IQuestion {
+export interface Question {
+  /**
+   * ID
+   */
+  id: number;
+
   /**
    * 問題形式
    */
@@ -14,7 +18,7 @@ export interface IQuestion {
   /**
    * 問題文
    */
-  sentence: ISentence;
+  sentence: string[];
 
   /**
    * 回答
