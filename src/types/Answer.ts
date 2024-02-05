@@ -5,7 +5,7 @@ import { AnswerId } from "./AnswerId";
  *
  * @author nagisano33
  */
-export interface IAnswer {
+export interface Answer {
   /**
    * 回答 ID
    */
