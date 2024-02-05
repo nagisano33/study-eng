@@ -1,3 +1,14 @@
+const wordClasses = [
+  "Noun",
+  "Pronoun",
+  "Adjective",
+  "Verb",
+  "Adverb",
+  "Preposition",
+  "Conjuction",
+  "Interjection",
+] as const;
+
 /**
  * 品詞
  *
@@ -10,12 +21,18 @@
  * @type {Conjunction} 接続詞
  * @type {Interjection} 間投詞
  */
-export type WordClass =
-  | "Noun"
-  | "Pronoun"
-  | "Adjective"
-  | "Verb"
-  | "Adverb"
-  | "Preposition"
-  | "Conjuction"
-  | "Interjection";
+export type WordClass = (typeof wordClasses)[number];
+
+/**
+ * 値が WordClass かどうかを返す
+ *
+ * @param value 判別する値
+ * @returns WordClass かどうか
+ */
+export function isWordClass(value: unknown): value is WordClass {
+  if (typeof value !== "string") {
+    return false;
+  }
+
+  return wordClasses.some((wordClass) => wordClass === value);
+}
