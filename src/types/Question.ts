@@ -1,4 +1,4 @@
-import { IAnswer } from "./IAnswer";
+import { Answer } from "./Answer";
 import { QuestionType } from "./QuestionType";
 
 /**
@@ -23,7 +23,7 @@ export interface Question {
   /**
    * 回答
    */
-  answers: IAnswer[];
+  answers: Answer[];
 
   /**
    * 解説
