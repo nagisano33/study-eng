@@ -1,25 +1,35 @@
-import { Box, Stack } from "@chakra-ui/layout";
+import { Stack } from "@chakra-ui/layout";
 import { AnswerButton } from "./AnswerButton";
+import { Answer } from "../../../../types/Answer";
+
+interface Props {
+  /**
+   * 質問 ID
+   */
+  questionId: number;
+
+  /**
+   * 問題リスト
+   */
+  answers: Answer[];
+}
 
 /**
  * 回答コントローラ
  *
  * @author nagisano33
  */
-export function AnswerControl() {
+export function AnswerControl({ questionId, answers }: Props) {
   return (
     <Stack>
-      <Box display={"flex"} gap={1}>
+      {answers.map((answer) => (
         <AnswerButton
-          text={"ああああああああああああああああああああああああ"}
-          answerId={"A"}
+          key={answer.answerId}
+          questionId={questionId}
+          answerId={answer.answerId}
+          text={answer.text}
         />
-        <AnswerButton text={"い"} answerId={"B"} />
-      </Box>
-      <Box display={"flex"} gap={1}>
-        <AnswerButton text={"う"} answerId={"C"} />
-        <AnswerButton text={"え"} answerId={"D"} />
-      </Box>
+      ))}
     </Stack>
   );
 }
