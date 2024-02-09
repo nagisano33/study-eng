@@ -1,6 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { useCallback } from "react";
 import { AnswerId } from "../../../../types/AnswerId";
+import { useNavigate } from "react-router-dom";
 
 /**
  * 回答ボタンプロパティ
@@ -12,14 +13,14 @@ export interface IAnswerButtonProperty {
   text: string;
 
   /**
+   * 問題 ID
+   */
+  questionId: number;
+
+  /**
    * 回答 ID
    */
   answerId: AnswerId;
-
-  /**
-   * クリック時のコールバック
-   */
-  onClick?: () => void;
 }
 
 /**
@@ -29,9 +30,11 @@ export interface IAnswerButtonProperty {
  */
 export function AnswerButton({
   text,
+  questionId,
   answerId,
-  onClick = () => undefined,
 }: IAnswerButtonProperty) {
+  const navigate = useNavigate();
+
   const getColor = useCallback(() => {
     switch (answerId) {
       case "A":
@@ -55,7 +58,7 @@ export function AnswerButton({
       height={"inherit"}
       minHeight={"2.5em"}
       colorScheme={getColor()}
-      onClick={onClick}
+      onClick={() => navigate(`/answer?id=${questionId}&answer=${answerId}`)}
     >
       {text}
     </Button>
