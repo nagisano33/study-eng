@@ -12,7 +12,7 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Main />}>
-        <Route path="/questions/:id" element={<QuestionPage />} />
+        <Route path="/questions" element={<QuestionPage />} />
         <Route path="/answer" element={<>answer</>} />
       </Route>
       <Route path="/registration" element={<Registration />} />
