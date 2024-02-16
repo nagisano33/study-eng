@@ -3,18 +3,19 @@ import { Center, Stack } from "@chakra-ui/layout";
 
 /**
  * 背景ボックス
- * 
+ *
  * @author nagisano33
  */
 export function BackgroundBox({ children }: PropsWithChildren) {
   return (
-    <Center mt={5}>
+    <Center>
       <Stack
-        bg={"gray.100"}
-        boxShadow={"md"}
-        rounded={"base"}
-        width={["95%", "80%", "40%"]}
-        p={10}
+        display={"flex"}
+        bg={"gray.50"}
+        boxShadow={"xl"}
+        rounded={"10"}
+        width={["95%", "95%", "80%", "50%"]}
+        p={3}
         gap={10}
       >
         {children}
