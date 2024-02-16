@@ -6,7 +6,7 @@ import { Center, Stack } from "@chakra-ui/layout";
  *
  * @author nagisano33
  */
-export function BackgroundBox({ children }: PropsWithChildren) {
+export function ContentBox({ children }: PropsWithChildren) {
   return (
     <Center>
       <Stack
