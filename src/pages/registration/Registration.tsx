@@ -1,6 +1,6 @@
 import { Text } from "@chakra-ui/react";
 import { RegistrationForm } from "./components/RegistrationForm";
-import { BackgroundBox } from "../components/BackgroundBox";
+import { ContentBox } from "../components/ContentBox";
 
 /**
  * 登録画面
@@ -9,9 +9,9 @@ import { BackgroundBox } from "../components/BackgroundBox";
  */
 export function Registration() {
   return (
-    <BackgroundBox>
+    <ContentBox>
       <Text fontSize="4xl">新規登録</Text>
       <RegistrationForm />
-    </BackgroundBox>
+    </ContentBox>
   );
 }
