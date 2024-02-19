@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Main } from "./main/Main";
 import { Registration } from "./registration/Registration";
 import { QuestionPage } from "./main/question/QuestionPage";
+import { ExplanationPage } from "./main/explanation/ExplanationPage";
 
 /**
  * アプリメインのルーティング
@@ -13,7 +14,7 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<Main />}>
         <Route path="/questions" element={<QuestionPage />} />
-        <Route path="/answer" element={<>answer</>} />
+        <Route path="/explanations" element={<ExplanationPage />} />
       </Route>
       <Route path="/registration" element={<Registration />} />
     </Routes>
