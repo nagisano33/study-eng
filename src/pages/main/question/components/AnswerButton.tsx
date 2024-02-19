@@ -58,7 +58,7 @@ export function AnswerButton({
       height={"inherit"}
       minHeight={"2.5em"}
       colorScheme={getColor()}
-      onClick={() => navigate(`/answer?id=${questionId}&answer=${answerId}`)}
+      onClick={() => navigate(`/explanations?id=${questionId}&answer=${answerId}`)}
     >
       {text}
     </Button>
