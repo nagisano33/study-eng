@@ -11,10 +11,10 @@ type Props = Pick<
 
 /**
  * ユーザの選択結果を表示するコンポーネント
- * 
+ *
  * @param param0 プロパティ
  * @returns コンポーネント１
- * 
+ *
  * @author nagisano33
  */
 export function UserResult({
@@ -32,14 +32,15 @@ export function UserResult({
         <Text fontSize={"xl"} color={"orange"}>
           問題文
         </Text>
-        <Sentence words={sentence} underLineText={correctAnswer} />
-        <Link
-          paddingX={3}
-          href="https://www.deepl.com/ja/translator#en/ja/I am from Japan."
-          isExternal
-        >
-          和訳を表示 <ExternalLinkIcon mx="2px" />
-        </Link>
+        <Stack paddingX={3}>
+          <Sentence words={sentence} underLineText={correctAnswer} />
+          <Link
+            href="https://www.deepl.com/ja/translator#en/ja/I am from Japan."
+            isExternal
+          >
+            和訳を表示 <ExternalLinkIcon mx="2px" />
+          </Link>
+        </Stack>
       </Stack>
       <Stack gap={1}>
         <Text fontSize={"xl"} color={"orange"}>
