@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import { AnswerId, isAnswerId } from "../../../../types/AnswerId";
 
 /**
  * useExplanationPageParameter の戻り値
@@ -14,7 +15,7 @@ interface UseExplanationPageParameterReturn {
   /**
    * 回答 ID
    */
-  answerId: string;
+  answerId: AnswerId;
 }
 
 /**
@@ -28,7 +29,7 @@ export function useExplanationPageParameter(): UseExplanationPageParameterReturn
   const id = Number(searchParams.get("id"));
   const answerId = searchParams.get("answer");
 
-  if (!answerId) {
+  if (!answerId || !isAnswerId(answerId)) {
     throw new Error();
   }
 
