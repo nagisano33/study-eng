@@ -2,8 +2,9 @@ import { AnswerControl } from "./components/AnswerControl";
 import { Stack, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useQuestionPageQuery } from "./hooks/useQuestionPageQuery";
-import { Blank } from "./components/Blank";
+import { TextWithUnderLine } from "./components/TextWithUnderLine";
 import { Sentence } from "./components/Sentence";
+import { ContentBox } from "../../components/ContentBox";
 
 /**
  * 問題画面
@@ -18,15 +19,19 @@ export function QuestionPage() {
   }, []);
 
   return (
-    <Stack>
-      <Text fontSize={"2xl"} color={"orange"}>
-        問題
-      </Text>
-      <Text fontSize={"xl"}>
-        次の <Blank /> に入る語句を選択せよ
-      </Text>
-      <Sentence words={question.sentence} />
-      <AnswerControl questionId={question.id} answers={question.answers} />
+    <Stack gap={3}>
+      <ContentBox>
+        <Text fontSize={"2xl"} color={"orange"}>
+          問題
+        </Text>
+        <Text fontSize={"xl"}>
+          <TextWithUnderLine text="A" /> に入る語句は次のうちどれか？
+        </Text>
+        <Sentence words={question.sentence} underLineText="A" />
+      </ContentBox>
+      <ContentBox>
+        <AnswerControl questionId={question.id} answers={question.answers} />
+      </ContentBox>
     </Stack>
   );
 }
