@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import { Blank } from "./Blank";
+import { TextWithUnderLine } from "./TextWithUnderLine";
 import { Word } from "./Word";
 
 interface IProps {
@@ -7,6 +7,11 @@ interface IProps {
    * 単語リスト
    */
   words: string[];
+
+  /**
+   * 下線表示するテキスト
+   */
+  underLineText: string;
 }
 
 /**
@@ -23,11 +28,15 @@ function isBlank(word: string) {
  *
  * @author nagisano33
  */
-export function Sentence({ words }: IProps) {
+export function Sentence({ words, underLineText }: IProps) {
   return (
     <Box display={"flex"} gap={1}>
       {words.map((word, index) =>
-        isBlank(word) ? <Blank key={index} /> : <Word key={index} word={word} />
+        isBlank(word) ? (
+          <TextWithUnderLine text={underLineText} key={index} />
+        ) : (
+          <Word key={index} word={word} />
+        )
       )}
     </Box>
   );
