@@ -12,11 +12,11 @@ export function ContentBox({ children }: PropsWithChildren) {
       <Stack
         display={"flex"}
         bg={"gray.50"}
-        boxShadow={"xl"}
+        borderWidth={1}
         rounded={"10"}
-        width={["95%", "95%", "80%", "50%"]}
+        width={"100%"}
         p={3}
-        gap={10}
+        gap={3}
       >
         {children}
       </Stack>
